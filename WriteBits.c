@@ -1,3 +1,12 @@
+// -----------------------------------------------------------
+// NAME : Gabriel Revells                    User ID: gcrevell
+// DUE DATE : 11/19/2015
+// PROGRAM ASSIGNMENT 3
+// FILE NAME : WriteBits.c
+// PROGRAM PURPOSE :
+//    This file defines the functions defined in WriteBits.h
+// -----------------------------------------------------------
+
 #include "WriteBits.h"
 
 void init(struct BitWriter* bw) {

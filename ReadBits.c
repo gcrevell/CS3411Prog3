@@ -1,3 +1,13 @@
+// -----------------------------------------------------------
+// NAME : Gabriel Revells                    User ID: gcrevell
+// DUE DATE : 11/19/2015
+// PROGRAM ASSIGNMENT 3
+// FILE NAME : ReadBits.c
+// PROGRAM PURPOSE :
+//    This file defines the functions and struct needed to
+//    read bits from stdin.
+// -----------------------------------------------------------
+
 #include "ReadBits.h"
 #include <stdio.h>
 

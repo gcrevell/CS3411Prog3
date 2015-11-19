@@ -1,9 +1,29 @@
+// -----------------------------------------------------------
+// NAME : Gabriel Revells                    User ID: gcrevell
+// DUE DATE : 11/19/2015
+// PROGRAM ASSIGNMENT 3
+// FILE NAME : encoder.c
+// PROGRAM PURPOSE :
+//    This file compresses a file given through stdin.
+// -----------------------------------------------------------
+
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/uio.h>
 #include <string.h>
 #include "WriteBits.h"
 
+// -----------------------------------------------------------
+// FUNCTION  frequent :
+//    This function reads the input characters from stdin and
+//    counts the occurance of each character and marks the 15
+//    most common and frequent.
+// PARAMETER USAGE :
+//    int ret[] - The array of ints, either 0 or 1 to indicate
+//      if the value is a frequent character.
+//    char freqChar[] - The array of characters that are
+//      frequent.
+// -----------------------------------------------------------
 void frequent(int ret[256], char freqChar[16]) {
 	int frequency[256];
 	char buf[1024];
@@ -57,6 +77,14 @@ void frequent(int ret[256], char freqChar[16]) {
 	freqChar[15] = 255;
 }
 
+// -----------------------------------------------------------
+// FUNCTION  getFourBitInt :
+//    This function takes an int and converts it to a 4 bit
+//    int in an array.
+// PARAMETER USAGE :
+//    int in - The int to convert to bits.
+//    int ret[] - The array to store the bits in.
+// -----------------------------------------------------------
 void getFourBitInt(int in, int ret[4]) {
 	for (int i = 3; i >= 0; i--) {
 		ret[i] = in & 1;
@@ -64,6 +92,14 @@ void getFourBitInt(int in, int ret[4]) {
 	}
 }
 
+// -----------------------------------------------------------
+// FUNCTION  getThreeBitInt :
+//    This function takes an int and converts it to a 3 bit
+//    int in an array.
+// PARAMETER USAGE :
+//    int in - The int to convert to bits.
+//    int ret[] - The array to store the bits in.
+// -----------------------------------------------------------
 void getThreeBitInt(int in, int ret[3]) {
 	for (int i = 2; i >= 0; i--) {
 		ret[i] = in & 1;
@@ -71,6 +107,14 @@ void getThreeBitInt(int in, int ret[3]) {
 	}
 }
 
+// -----------------------------------------------------------
+// FUNCTION  charToBinary :
+//    This function takes an char and converts it to an 8 bit
+//    int in an array.
+// PARAMETER USAGE :
+//    char c - The char to convert to bits.
+//    int ret[] - The array to store the bits in.
+// -----------------------------------------------------------
 void charToBinary(char c, int ret[8]) {
 	for (int i = 7; i >= 0; i--) {
 		ret[i] = c & 1;
@@ -78,6 +122,14 @@ void charToBinary(char c, int ret[8]) {
 	}
 }
 
+// -----------------------------------------------------------
+// FUNCTION  main :
+//    This function reads in the input from stdin and
+//    compresses it using the given algorithm.
+// PARAMETER USAGE :
+//    int argc - The number of arguments.
+//    char* argv[] - The arguments.
+// -----------------------------------------------------------
 int main(int argc, const char* argv[]) {
 	int freq[256];
 	char buf[1024];

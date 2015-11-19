@@ -1,0 +1,4 @@
+For this project I ran several tests using encoder to compress and
+decoder to decompress and then checked the output matched the input file.
+I tested this with files of various sizes, including empty files and
+very large files. 
